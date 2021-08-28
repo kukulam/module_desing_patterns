@@ -3,9 +3,9 @@ package kukulam.module.designpatterns.strategy.order;
 import kukulam.module.designpatterns.singleton.Logger;
 
 public class Order {
-    private int people;
-    private double amount;
-    private Payment payment;
+    private final int people;
+    private final double amount;
+    private final Payment payment;
 
     public Order(int people, double amount, Payment payment) {
         this.people = people;
@@ -26,5 +26,14 @@ public class Order {
         Payment paymentWithoutService = new PaymentWithoutService();
         Order pair = new Order(2, 40, paymentWithoutService);
         pair.pay();
+
+        // or with factory
+        OrderFactory orderFactory = new OrderFactory(paymentWithService, paymentWithoutService);
+
+        Order groupOf6People = orderFactory.createOrder(6, 80);
+        groupOf6People.pay();
+
+        Order groupOf2People = orderFactory.createOrder(2, 50);
+        groupOf2People.pay();
     }
 }
