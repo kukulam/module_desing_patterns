@@ -30,15 +30,16 @@ public class Product implements Visitable {
 
         List<Product> products = Arrays.asList(apple, orange, strawberry);
 
-        ProductsPrice fruitsPrice = new ProductsPrice();
+        ProductsPrice fruitsPriceVisitor = new ProductsPrice();
+        MaxProductVisitor maxPriceVisitor = new MaxProductVisitor();
 
         for (Product product : products) {
-            product.accept(fruitsPrice);
+            product.accept(fruitsPriceVisitor);
+            product.accept(maxPriceVisitor);
         }
-
-        Logger.INSTANCE.logMessage("Fruits price: " + fruitsPrice.getPrice());
+        Logger.INSTANCE.logMessage("Fruits price: " + fruitsPriceVisitor.getPrice());
+        Logger.INSTANCE.logMessage("Max price: " + maxPriceVisitor.getMaxPrice());
     }
-
 }
 
 
