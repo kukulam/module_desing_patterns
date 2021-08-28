@@ -12,11 +12,11 @@ class CarDatabaseRepository implements CarRepository {
 
     public CarDatabaseRepository() {
         this.cars.put(
-                "bmw", new Car("bmw", "BMW 1"));
+                "bmw_1", new Car("BMW 1", "bmw_1"));
         this.cars.put(
-                "mazda", new Car("mazda", "Mazda X"));
+                "mazda_x", new Car("Mazda X", "mazda_x"));
         this.cars.put(
-                "mercedes", new Car("mercedes", "Mercedes A"));
+                "mercedes_a", new Car("Mercedes A", "mercedes_a"));
     }
 
     @Override

@@ -31,19 +31,19 @@ class Car {
     public static void main(String[] args) {
         CarRepository carRepository = new CachedCarRepositoryProxy(new CarDatabaseRepository());
 
-        Car bmw1 = carRepository.findById("bmw");
+        Car bmw1 = carRepository.findById("bmw_1");
         Logger.INSTANCE.logMessage("Founded car: " + bmw1);
 
-        Car bmw2 = carRepository.findById("bmw");
+        Car bmw2 = carRepository.findById("bmw_1");
         Logger.INSTANCE.logMessage("Founded car: " + bmw2);
 
-        Car bmw3 = carRepository.findById("bmw");
+        Car bmw3 = carRepository.findById("bmw_1");
         Logger.INSTANCE.logMessage("Founded car: " + bmw3);
 
-        Car mercedes1 = carRepository.findById("mercedes");
+        Car mercedes1 = carRepository.findById("mercedes_a");
         Logger.INSTANCE.logMessage("Founded car: " + mercedes1);
 
-        Car mercedes2 = carRepository.findById("mercedes");
+        Car mercedes2 = carRepository.findById("mercedes_a");
         Logger.INSTANCE.logMessage("Founded car: " + mercedes2);
     }
 }
