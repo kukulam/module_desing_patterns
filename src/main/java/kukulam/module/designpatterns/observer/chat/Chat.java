@@ -24,7 +24,7 @@ public class Chat implements Observable {
 
         Observer james = new User("James");
         Observer harry = new User("Harry");
-        User mike = new User("Mike");
+        Observer mike = new User("Mike");
 
         chat.addObserver(james);
         chat.addObserver(harry);
